@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import {Form, FormsModule} from '@angular/forms';
-import { Car2Component } from './car2/car2.component';
+import { Cars2Component } from './cars2/cars2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsComponent,
     CarComponent,
-    Car2Component
+    Cars2Component
   ],
   imports: [
     BrowserModule,

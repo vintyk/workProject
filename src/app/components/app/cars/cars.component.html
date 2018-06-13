@@ -2,6 +2,7 @@
 <!--<button [disabled]="!isNotDisabled" class="btn btn-primary"> Добавить машину </button>-->
 
 <input type="text" class="form-control" [(ngModel)]="carName">
+<br>
 <button (click)="addCar()" class="btn btn-primary"> Добавить машину</button>
 <h4 *ngIf="!addCarStatus; else successStatus">Mашину еще не добавляли</h4>
 <hr>
@@ -16,7 +17,6 @@
   <li *ngFor="let car of cars; let idx = index">
     <em>Марка автомобиля: </em> <b>{{car}}</b> (Index= {{idx}})
   </li>
-
 </ul>
 
 
