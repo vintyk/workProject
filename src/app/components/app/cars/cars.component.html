@@ -1,3 +1,45 @@
-<app-car></app-car>
-<app-car></app-car>
+<!-- [disabled] - ПОСТОЯННО следит (затратно) -->
+<!--<button [disabled]="!isNotDisabled" class="btn btn-primary"> Добавить машину </button>-->
 
+<input type="text" class="form-control" [(ngModel)]="carName">
+<button (click)="addCar()" class="btn btn-primary"> Добавить машину</button>
+<h4 *ngIf="!addCarStatus; else successStatus">Mашину еще не добавляли</h4>
+<hr>
+<app-car *ngFor="let car of cars"></app-car>
+<ul>
+  <li *ngFor="let item of items">
+    <b>ID: {{item.id}}, Name: {{item.name}}</b>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let car of cars; let idx = index">
+    <em>Марка автомобиля: </em> <b>{{car}}</b> (Index= {{idx}})
+  </li>
+
+</ul>
+
+
+<!--<input type="text" class="form-control" (input)="onKeyUp($event)">-->
+<!--<input type="text" class="form-control" #myInp (input)="onKeyUp2(myInp.value)">-->
+<!--<p>{{ inputText }}</p>-->
+<!--<p>{{ inputText2 }}</p>-->
+
+<!--<h3>По нажатию на ВВОД</h3>-->
+<!--<input type="text" class="form-control" (keyup)="onKeyUpEnter($event)">-->
+<!--<p>{{ inputText3 }}</p>-->
+
+<!--<h3>По нажатию на ВВОД более удобно</h3>-->
+<!--<input type="text" class="form-control" (keyup.enter)="onKeyUpEnterEasy($event)">-->
+<!--<p>{{ inputText4 }}</p>-->
+
+<!--<h3>Связывание двухстороннее </h3>-->
+<!--<p>Не забыть добавить FormModule app.module.ts</p>-->
+<!--<input type="text" class="form-control" [(ngModel)]="inputText5">-->
+<!--<p>{{ inputText5 }}</p>-->
+
+
+<ng-template #successStatus>
+  <h4 #successStatus>Mашина добавлена</h4>
+</ng-template>
+<hr>
