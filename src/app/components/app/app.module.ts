@@ -6,13 +6,19 @@ import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import {Form, FormsModule} from '@angular/forms';
 import { Cars2Component } from './cars2/cars2.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroComponent } from './hero/hero.component';
+import { AddHeroComponent } from './add-hero/add-hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsComponent,
     CarComponent,
-    Cars2Component
+    Cars2Component,
+    HeroesComponent,
+    HeroComponent,
+    AddHeroComponent
   ],
   imports: [
     BrowserModule,
