@@ -10,6 +10,8 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroComponent } from './hero/hero.component';
 import { AddHeroComponent } from './add-hero/add-hero.component';
 import { AddOrcComponent } from './add-orc/add-orc.component';
+import { BackgroundDirective } from '../directives/background.directive';
+import {BackgroundRenderDirective} from '../directives/backgroundRender.directive';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { AddOrcComponent } from './add-orc/add-orc.component';
     HeroesComponent,
     HeroComponent,
     AddHeroComponent,
-    AddOrcComponent
+    AddOrcComponent,
+    BackgroundDirective,
+    BackgroundRenderDirective
   ],
   imports: [
     BrowserModule,
-    FormsModule
-  ],
+    FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
