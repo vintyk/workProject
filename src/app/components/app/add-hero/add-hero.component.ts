@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-add-hero',
@@ -8,7 +8,12 @@ import {Component, EventEmitter, Output} from '@angular/core';
 export class AddHeroComponent {
   heroName = '';
   heroAge = 0;
-  @Output() heroEmiter = new EventEmitter<{ name: string, age: number }>();
+  @Output('onAddHero') heroEmiter = new EventEmitter<{ name: string, age: number }>();
+  @ViewChild('heroHeading') heroHeading: ElementRef;
+
+  constructor() {
+    console.log(this.heroHeading);
+  }
 
   addHero() {
     this.heroEmiter.emit({

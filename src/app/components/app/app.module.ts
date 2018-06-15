@@ -9,6 +9,7 @@ import { Cars2Component } from './cars2/cars2.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroComponent } from './hero/hero.component';
 import { AddHeroComponent } from './add-hero/add-hero.component';
+import { AddOrcComponent } from './add-orc/add-orc.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddHeroComponent } from './add-hero/add-hero.component';
     Cars2Component,
     HeroesComponent,
     HeroComponent,
-    AddHeroComponent
+    AddHeroComponent,
+    AddOrcComponent
   ],
   imports: [
     BrowserModule,

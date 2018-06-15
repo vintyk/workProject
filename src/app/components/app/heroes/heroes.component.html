@@ -1,2 +1,18 @@
-<app-add-hero (onAddCar)="updateCarList($event)"></app-add-hero>
-<app-hero *ngFor="let hero of heroes" [heroItem]="hero"></app-hero>
+<p>Форма добавления Героя</p>
+<app-add-hero (onAddHero)="updateHeroList($event)"></app-add-hero>
+<button class="btn btn-success form-control" (click)="changeHeroName()">изменить имя</button>
+<button class="btn btn-danger" (click)="deleteHero()">Удалить героя</button>
+<hr>
+<div class="list-group">
+  <app-hero
+    class="list-group-item"
+    *ngFor="let hero of heroes"
+    [heroItem]="hero"
+    [heroName]="hero.name"
+  >
+
+    <h4 #heroHeading class="list-group-item-primary"> Имя героя: {{hero.name}}</h4>
+    <p class="list-group-item-light">возраст: {{hero.age}}</p>
+
+  </app-hero>
+</div>

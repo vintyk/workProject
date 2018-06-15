@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {all} from 'codelyzer/walkerFactory/walkerFn';
 
 @Component({
   selector: 'app-heroes',
@@ -23,7 +24,16 @@ export class HeroesComponent {
       age: 6572
     }];
 
-  updateCarList(hero: {name: string, age: number}) {
+  updateHeroList(hero: { name: string, age: number }) {
     this.heroes.push(hero);
+  }
+
+  changeHeroName() {
+    this.heroes[0].name = 'новое имя для Героя';
+  }
+
+  deleteHero() {
+    this.heroes.slice(0, 1);
+    console.log(this.heroes);
   }
 }
