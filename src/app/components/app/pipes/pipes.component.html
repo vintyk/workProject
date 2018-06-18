@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4>{{ name }}</h4>
+      <!-- 0- c какого символа, до какого символа (не включительно) -->
+      <!--идущий следом пайп делает все с большой буквы-->
+      <h4>{{ name | lowercase}}</h4>
+      <h4>{{ name | slice:0:3 | uppercase }}</h4>
+      <hr>
+      <!--пайп number - по дефолту режет до 3-х символов и округляет-->
+      <p>пайп number - по дефолту режет до 3-х символов и округляет:</p>
+      <h4>{{ pi | number }}</h4>
+      <!--можно задать параметр диапозона знаков после запятой-->
+      <p>можно задать параметр диапозона знаков после запятой:</p>
+      <h4>диапозон 1-1 = {{ pi | number:'1.1-1' }}</h4>
+      <h4>диапозон 1-2 = {{ pi | number:'1.1-2' }}</h4>
+      <h4>диапозон 3-5 = {{ pi | number:'1.3-5' }}</h4>
+      <!--если надо обязательно 2 знака ПЕРЕД запятой-->
+      <h4>диапозон 2 перед, 2 после = {{ pi | number:'2.2-2' }}</h4>
+      <hr>
+      <!--Пайп для денег: либо 1 либо 2 параметра-->
+      <h4>{{ money | currency}}</h4>
+      <h4>{{ money | currency:USD}}</h4>
+      <h4>{{ money | currency:'EUR':false}}</h4>
+      <h4>{{ money | currency:'EUR':true}}</h4>
+      <hr>
+      <h4>{{ date }}</h4>
+      <h4>{{ date | date}}</h4>
+      <h4>{{ date | date: 'fullDate'}}</h4>
+      <h4>{{ date | date: 'shortDate'}}</h4>
+      <h4>{{ date | date: 'shortTime'}}</h4>
+      <h4>{{ date | date: 'dd-mm-yyyy'}}</h4>
+      <h4>{{ date | date: 'hh:mm:ss'}}</h4>
+    </div>
+    <div class="col-sm-6">
+      <h4>{{ amount }}</h4>
+      <h4>{{ amount | percent}}</h4>
+      <hr>
+      <!--объект приводится к строке-->
+      <h4> {{ object }}</h4>
+      <h4>
+        <pre> {{ object | json}}</pre>
+      </h4>
+
+    </div>
+  </div>
+</div>
+

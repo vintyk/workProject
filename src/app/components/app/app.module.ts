@@ -12,6 +12,8 @@ import { AddHeroComponent } from './add-hero/add-hero.component';
 import { AddOrcComponent } from './add-orc/add-orc.component';
 import { BackgroundDirective } from '../directives/background.directive';
 import {BackgroundRenderDirective} from '../directives/backgroundRender.directive';
+import { PipesComponent } from './pipes/pipes.component';
+import { PipesCustomComponent } from './pipes-custom/pipes-custom.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {BackgroundRenderDirective} from '../directives/backgroundRender.directiv
     AddHeroComponent,
     AddOrcComponent,
     BackgroundDirective,
-    BackgroundRenderDirective
+    BackgroundRenderDirective,
+    PipesComponent,
+    PipesCustomComponent
   ],
   imports: [
     BrowserModule,

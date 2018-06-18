@@ -1,0 +1,22 @@
+<ul>
+  <li *ngFor="let car of cars; let idx = index">
+    <!--А можно записать КэмелКейсом backgroundColor (но без кавычек)-->
+  <div
+    [ngStyle]="{'background-color':(idx + 1) % 2 === 0 ? 'cadetblue':'transparent'}"
+    [ngClass]="{'big-text': setBigCarText(car)}"
+  >
+    <b>{{ idx +1 }}</b> {{ car }}
+  </div>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let date of dates; let idx = index">
+    <div>
+      <!--вертикальная черта - вызывает пайп (pipe)-->
+      <!--в первом случае для формата даты-->
+      <!--во втором случае для uppercase-->
+      <b>{{idx + 1}}:  </b> {{ date | date: 'medium' | uppercase}}
+    </div>
+  </li>
+</ul>
