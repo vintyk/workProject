@@ -1,3 +1,16 @@
-<p>
-  pipes-custom works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Pipes Custom</h2>
+      <h4>{{ num }}</h4>
+      <!--custom Pipe-->
+      <h4>{{ num | appPow }}</h4>
+      <h4>{{ num | appPow: 5 }}</h4>
+      <h4>{{ 6 | appPow: 2 }}</h4>
+      <h4>{{ num | appPow: 5: ' = ' }}</h4>
+    </div>
+    <div class="col-sm-6">
+    </div>
+  </div>
+</div>
+
