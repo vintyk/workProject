@@ -1,3 +1,12 @@
-<p>
-  pipe-filter works!
-</p>
+<!--async - pipe асинхронно выводит на экран вместо подписки -->
+<h1>{{ asyncTitle | async }}</h1>
+<input class="form-control" type="text" [(ngModel)]="searchHero">
+<button class="bt btn-primary form-control" (click)="addHero()">Добавить Героя</button>
+<hr>
+<ul class="list-group">
+  <li
+    class="list-group-item"
+    *ngFor="let hero of heroes  | heroFilterPipe: searchHero: 'descript'; let i = index"
+  ><b>{{ i + 1}} {{hero.name}} - <i>{{hero.descript}}</i></b>
+  </li>
+</ul>

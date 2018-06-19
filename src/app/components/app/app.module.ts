@@ -14,8 +14,12 @@ import {BackgroundDirective} from '../directives/background.directive';
 import {BackgroundRenderDirective} from '../directives/backgroundRender.directive';
 import {PipesComponent} from './pipes/pipes.component';
 import {PipesCustomComponent} from './pipes-custom/pipes-custom.component';
+import {PipeFilterComponent} from './pipe-filter/pipe-filter.component';
 import {PowPipe} from '../pipes/pow.pipe';
-import { PipeFilterComponent } from './pipe-filter/pipe-filter.component';
+import {HeroFilterPipe} from '../pipes/hero.filter.pipe';
+import { MageComponent } from './mage/mage.component';
+import { AddMageComponent } from './add-mage/add-mage.component';
+import { MagesComponent } from './mages/mages.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { PipeFilterComponent } from './pipe-filter/pipe-filter.component';
     PipesComponent,
     PipesCustomComponent,
     PowPipe,
-    PipeFilterComponent
+    PipeFilterComponent,
+    HeroFilterPipe,
+    MageComponent,
+    AddMageComponent,
+    MagesComponent,
   ],
   imports: [
     BrowserModule,

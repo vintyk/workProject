@@ -1,0 +1,15 @@
+<div [ngClass]="getClass()">
+  <h4 [ngStyle]="{marginBottom: '20px'}">{{mage.name}}</h4>
+  <div>
+    <button
+      class="btn btn-sm btn-primary"
+      [disabled]="mage.isDead"
+      (click)="onAction('kill')"
+    >Убить кровожадного подонка!</button>
+    <button
+      class="btn btn-sm btn-default"
+      [disabled]="!mage.isDead"
+      (click)="onAction('return')"
+    >Вернуть</button>
+  </div>
+</div>
