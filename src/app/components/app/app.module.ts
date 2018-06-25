@@ -20,6 +20,9 @@ import {HeroFilterPipe} from '../pipes/hero.filter.pipe';
 import { MageComponent } from './mage/mage.component';
 import { AddMageComponent } from './add-mage/add-mage.component';
 import { MagesComponent } from './mages/mages.component';
+import {ConsoleService} from '../services/console.service';
+import {MagesService} from '../services/mages.service';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +44,13 @@ import { MagesComponent } from './mages/mages.component';
     MageComponent,
     AddMageComponent,
     MagesComponent,
+    FormsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ConsoleService, MagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

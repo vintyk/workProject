@@ -1,32 +1,22 @@
-import {Component} from '@angular/core';
-import { MageComponent } from '../mage/mage.component';
-import { AddMageComponent } from '../add-mage/add-mage.component';
+import {Component, OnInit} from '@angular/core';
+import {MageComponent} from '../mage/mage.component';
+import {AddMageComponent} from '../add-mage/add-mage.component';
+import {MagesService} from '../../services/mages.service';
 
 @Component({
   selector: 'app-mages',
   templateUrl: './mages.component.html',
-  styleUrls: ['./mages.component.css']
+  styleUrls: ['./mages.component.css'],
 })
-export class MagesComponent {
-  mages = [
-    {
-      name: 'Gendalf',
-      isDead: false
-    },
-    {
-      name: 'Sauron',
-      isDead: true
-    },
-    {
-      name: 'Saruman',
-      isDead: false
-    }
-  ];
+export class MagesComponent implements OnInit {
+  mages = [];
 
-  addMageToList(mageName: string) {
-    this.mages.push({
-      name: mageName,
-      isDead: false
-    });
+  constructor(private service: MagesService) {
   }
+
+  ngOnInit(): void {
+    this.mages = this.service.mages;
+  }
+
+
 }

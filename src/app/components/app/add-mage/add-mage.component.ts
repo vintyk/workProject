@@ -1,16 +1,19 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
+import {MagesService} from '../../services/mages.service';
 
 @Component({
   selector: 'app-add-mage',
   templateUrl: './add-mage.component.html',
-  styleUrls: ['./add-mage.component.css']
+  styleUrls: ['./add-mage.component.css'],
 })
 export class AddMageComponent {
-  @Output() onMageAdd = new EventEmitter<String>();
   mageName = '';
 
+  constructor(private service: MagesService) {
+  }
+
   addMage() {
-    this.onMageAdd.emit(this.mageName);
+    this.service.addMage(this.mageName);
     this.mageName;
   }
 
