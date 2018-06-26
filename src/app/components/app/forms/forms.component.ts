@@ -50,6 +50,10 @@ export class FormsComponent {
     this.isSubmite = true;
   }
 
+  clickEmpty() {
+    this.form.reset();
+  }
+
   addRandEmail() {
     const randEmail = 'Test@Gmail.com';
     this.form.form.patchValue({

@@ -1,4 +1,5 @@
 <div class="col-xs-8 col-xs-offset-2">
+  <span class="badge badge-secondary" (click)="clickEmpty()">Очистить форму</span>
   <form (ngSubmit)="submitForm(form)" #form="ngForm">
     <div ngModelGroup="userPasswordGroup" #userPasswordGroup="ngModelGroup">
       <p *ngIf="userPasswordGroup.invalid && userPasswordGroup.touched"
