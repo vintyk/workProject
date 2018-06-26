@@ -2,7 +2,7 @@
   <form (ngSubmit)="submitForm(form)" #form="ngForm">
     <div ngModelGroup="userPasswordGroup" #userPasswordGroup="ngModelGroup">
       <p *ngIf="userPasswordGroup.invalid && userPasswordGroup.touched"
-        [ngStyle]="{'color': 'red'}">И e-mail, и пароль - поля обязательные!</p>
+         [ngStyle]="{'color': 'red'}">И e-mail, и пароль - поля обязательные!</p>
       <div class="form-group">
         <label>Email</label>
         <input
@@ -16,6 +16,7 @@
           #email="ngModel"
         >
         <p *ngIf="email.invalid && email.touched" [ngStyle]="{'color':'red'}">Введите корректный E-Mail </p>
+        <button type="button" class="btn btn-primary" (click)="addRandEmail()">Добавить случайный E-Mail</button>
       </div>
       <div class="form-group">
         <label>Пароль</label>
@@ -57,9 +58,17 @@
       </label>
     </div>
     <button
+      (click)="isSubmited()"
       class="btn btn-success"
       type="submit"
       [disabled]="!form.valid">Сохранить
     </button>
   </form>
+  <div *ngIf="isSubmite" [ngStyle]="{'color': 'green'}"><kbd> Отправиляем JSON...</kbd>
+    <pre>
+      <code>
+      {{ formData | json }}
+      </code>
+    </pre>
+  </div>
 </div>

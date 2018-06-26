@@ -12,6 +12,10 @@ import {NgForm} from '@angular/forms';
   // `]
 })
 export class FormsComponent {
+  @ViewChild('form') form: NgForm;
+
+  isSubmite = false;
+  formData = '';
   answers = [{
     type: 'yes',
     text: 'Да'
@@ -37,7 +41,31 @@ export class FormsComponent {
   defaultAnswer = 'no';
   defaultCountry = '';
 
-  submitForm(form: NgForm) {
-    console.log('Submit OK!', form);
+  submitForm() {
+    console.log('Submit OK!', this.form);
+    this.formData = this.form.value;
+  }
+
+  isSubmited() {
+    this.isSubmite = true;
+  }
+
+  addRandEmail() {
+    const randEmail = 'Test@Gmail.com';
+    this.form.form.patchValue({
+      userPasswordGroup: {
+        email: randEmail,
+      }
+    });
+    // setValue обновит все заполненные поля.
+    // Придется заполнять все заново.
+    // this.form.setValue({
+    //   userPasswordGroup: {
+    //     email: randEmail,
+    //     pass: ''
+    //   },
+    //   country: '',
+    //   answer: ''
+    // });
   }
 }
