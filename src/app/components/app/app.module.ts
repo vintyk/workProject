@@ -24,6 +24,7 @@ import {ConsoleService} from '../services/console.service';
 import {MagesService} from '../services/mages.service';
 import { FormsComponent } from './forms/forms.component';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
+import { HttpServerComponent } from './http-server/http-server.component';
 import {HttpModule} from '@angular/http';
 
 @NgModule({
@@ -48,11 +49,13 @@ import {HttpModule} from '@angular/http';
     MagesComponent,
     FormsComponent,
     FormReactiveComponent,
+    HttpServerComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule
   ],
   providers: [ConsoleService, MagesService],
   bootstrap: [AppComponent]
