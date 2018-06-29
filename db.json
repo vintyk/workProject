@@ -1,40 +1,20 @@
 {
-  "posts": [
+  "cars": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Ford",
+      "color": "white",
+      "id": 1
     },
     {
-      "id": 2,
-      "body": "что-то написано",
-      "postId": 1
-    },{
-      "id": 3,
-      "body": "что-то написано снова",
-      "postId": 1
-    },{
-      "id": 4,
-      "body": "глупость",
-      "postId": 1
-    },{
-      "id": 5,
-      "body": "что-то написано опять",
-      "postId": 1
-    },{
-      "id": 6,
-      "body": "нечто умное",
-      "postId": 1
+      "name": "Opel",
+      "color": "black",
+      "id": 2
+    },
+    {
+      "name": "Peugeot",
+      "color": "silver",
+      "id": 3
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
+

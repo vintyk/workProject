@@ -25,7 +25,9 @@ import {MagesService} from '../services/mages.service';
 import { FormsComponent } from './forms/forms.component';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 import { HttpServerComponent } from './http-server/http-server.component';
-import {HttpModule} from '@angular/http';
+// import {HttpModule} from '@angular/http';
+import {CarsService} from '../services/cars.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -55,9 +57,10 @@ import {HttpModule} from '@angular/http';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    // HttpModule
+    HttpClientModule
   ],
-  providers: [ConsoleService, MagesService],
+  providers: [ConsoleService, MagesService, CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
