@@ -34,20 +34,20 @@ export class CarsComponent {
   }
 
   // onKeyUp(event: Event) {
-  //   this.inputText = (<HTMLInputElement>event.target).value;
+  //   this.inputText = (<HTMLInputElement>event.target).val;
   // }
 
-  // onKeyUp2(value: string) {
-  //   this.inputText2 = value;
+  // onKeyUp2(val: string) {
+  //   this.inputText2 = val;
   // }
   //
   // onKeyUpEnter(event) {
   //   if (event.code === 'Enter') {
-  //     this.inputText3 = event.target.value;
+  //     this.inputText3 = event.target.val;
   //   }
   // }
   //
   // onKeyUpEnterEasy(event) {
-  //   this.inputText4 = event.target.value;
+  //   this.inputText4 = event.target.val;
   // }
 }

@@ -57,7 +57,6 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    // HttpModule
     HttpClientModule
   ],
   providers: [ConsoleService, MagesService, CarsService],

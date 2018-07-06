@@ -13,7 +13,8 @@ interface Car {
   styleUrls: ['./http-server.component.css']
 })
 export class HttpServerComponent implements OnInit {
-  cars: Car[] = [];
+  cars;
+  appTitle;
   carName = '';
   color = [
     'red',
@@ -23,12 +24,7 @@ export class HttpServerComponent implements OnInit {
     'grey'
   ];
 
-  ngOnInit(): void {
-    this.carsService
-      .getCars()
-      .subscribe((cars: Car[]) => {
-        this.cars = cars;
-      });
+  constructor(private carsService: CarsService) {
   }
 
   getRandColor() {
@@ -36,26 +32,45 @@ export class HttpServerComponent implements OnInit {
     return this.color[num];
   }
 
+  ngOnInit(): void {
+
+    // this.getTitle();
+    // console.log(this.getTitle());
+    this.appTitle = this.carsService.getAppTitle();
+    this.cars = this.carsService.getCars();
+    // this.carsService
+    //   .getCars()
+    //   .subscribe((cars: Car[]) => {
+    //     this.cars = cars;
+    //   });
+  }
+
+  // getTitle() {
+  //   this.appTitle = this.carsService
+  //     .getAppTitle()
+  //     .pipe(map((i: number) => this.appTitle[i]));
+  // }
+
   setNewColor(car: Car) {
     this.carsService.changeColor(car, this.getRandColor())
       .subscribe((data) => {
-        console.log(data);
-
       });
-  }
-
-  constructor(private carsService: CarsService) {
   }
 
   // это Observeble объект. Он является stream.
   // на него можно подписаться
   // выполним по завершению стрима callBack функцию
+  // this.carsService
   loadCars() {
-    this.carsService
-      .getCars()
-      .subscribe((cars: Car[]) => {
-        this.cars = cars;
-      });
+    this.cars = this.carsService.getCars();
+    // .getCars()
+    // .subscribe(
+    //   (cars: Car[]) => {
+    //     this.cars = cars;
+    //   },
+    //   (error) => {
+    //     alert(error);
+    //   });
   }
 
   addCar(carName: string) {
@@ -63,15 +78,15 @@ export class HttpServerComponent implements OnInit {
       .addCar(this.carName)
       .subscribe((car: Car) => {
         this.cars.push(car);
-        console.log(car);
       });
     this.carName = '';
+    this.cars = this.carsService.getCars();
   }
 
   deleteCar(car: Car) {
     this.carsService.deleteCar(car)
       .subscribe((data) => {
-        console.log(data);
-      })
+        this.cars = this.cars.filter(c => c.id !== car.id);
+      });
   }
 }

@@ -1,14 +1,32 @@
 {
+  "title": {
+    "val": "Менеджер машин..."
+  },
   "cars": [
     {
       "name": "Mersedes",
-      "color": "red",
+      "color": "yellow",
       "id": 2
     },
     {
       "name": "KIA",
-      "color": "yellow",
+      "color": "grey",
       "id": 3
+    },
+    {
+      "name": "Opel",
+      "color": "yellow",
+      "id": 4
+    },
+    {
+      "name": "Volvo",
+      "color": "yellow",
+      "id": 5
+    },
+    {
+      "name": "WV",
+      "color": "red",
+      "id": 6
     }
   ]
 }

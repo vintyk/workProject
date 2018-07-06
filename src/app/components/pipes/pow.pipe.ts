@@ -5,10 +5,10 @@ import {Pipe, PipeTransform} from '@angular/core';
   name: 'appPow'
 })
 export class PowPipe implements PipeTransform {
-  // первый параметр - что приходит value
+  // первый параметр - что приходит val
   // Что-то должен вернуть.
-  // transform(value: any, powNumber: number = 1, symb?: string): any {
-  //   return symb + (Math.pow(value, powNumber));
+  // transform(val: any, powNumber: number = 1, symb?: string): any {
+  //   return symb + (Math.pow(val, powNumber));
   // }
   transform(value: any, powNumber: number = 1): any {
     return (Math.pow(value, powNumber));
