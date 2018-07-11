@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xl-12">
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-xl-12">-->
       <!--<app-cars2></app-cars2>-->
       <!--<app-cars></app-cars>-->
       <!--<app-heroes></app-heroes>-->
@@ -11,7 +11,27 @@
       <!--<app-mages></app-mages>-->
       <!--<app-forms></app-forms>-->
       <!--<app-form-reactive></app-form-reactive>-->
-      <app-http-server></app-http-server>
+      <!--<app-http-server></app-http-server>-->
+
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Машины</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
